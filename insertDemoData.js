@@ -5,6 +5,7 @@ require('dotenv').config();
 const Admin = require('./models/Admin');
 const User = require('./models/User');
 
+// Adims -
 const adminData = [
   {
     firstName: "Admin",
@@ -24,6 +25,8 @@ const adminData = [
   }
 ];
 
+
+// Users -
 const userData = [
   {
     username: "john_doe",
