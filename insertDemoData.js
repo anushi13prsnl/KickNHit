@@ -5,7 +5,7 @@ require('dotenv').config();
 const Admin = require('./models/Admin');
 const User = require('./models/User');
 
-// Adims -
+// Admins -
 const adminData = [
   {
     firstName: "Admin I",

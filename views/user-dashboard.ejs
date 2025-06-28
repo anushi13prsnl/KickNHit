@@ -58,32 +58,70 @@
 
     <!-- Hero Section -->
     <section class="bg-gradient-to-br from-green-50 to-blue-50 py-16">
-        <div
-            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
 
-            <div class="text-center md:text-left md:w-1/2">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-700 mb-4">
-                    Welcome to Your Sports Store,
-                    <span class="text-green-600">
-                        <%= user.firstName %>!
-                    </span>
-                </h1>
-                <p class="text-xl text-gray-700 mb-6">
-                    Discover premium cricket and football equipment with exclusive deals.
-                </p>
-                <p class="text-md text-gray-600">
-                    Simply click <span class="font-semibold">"Add to Cart"</span> on any item you like.<br>
-                    Track your selections in the cart and checkout when ready!
-                </p>
-            </div>
+    <!-- Text Content -->
+    <div class="text-center md:text-left md:w-1/2">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-700 mb-4">
+        Welcome to Your Sports Store,
+        <span class="text-green-600">
+          <%= user.firstName %>!
+        </span>
+      </h1>
+      <p class="text-xl text-gray-700 mb-6">
+        Discover premium cricket and football equipment with exclusive deals.
+      </p>
+      <p class="text-md text-gray-600">
+        Simply click <span class="font-semibold">"Add to Cart"</span> on any item you like.<br>
+        Track your selections in the cart and checkout when ready!
+      </p>
+    </div>
 
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <img src="https://media.istockphoto.com/id/520703373/photo/man-looking-to-buy-jacket-and-outdoor-equipment.jpg?s=612x612&w=0&k=20&c=foS1JrzI9m0M03GjRWSmMU_PqKcPCRjZRm3NQPcPMtA="
-                    alt="Man shopping for sports gear" class="rounded-2xl shadow-lg w-full h-auto object-cover" />
-            </div>
+    <!-- Image Crossfade Carousel -->
+    <div class="md:w-1/2 mb-10 md:mb-0 relative w-full h-72 sm:h-96">
+      <img id="img1"
+        src="https://media.istockphoto.com/id/520703373/photo/man-looking-to-buy-jacket-and-outdoor-equipment.jpg?s=612x612&w=0&k=20&c=foS1JrzI9m0M03GjRWSmMU_PqKcPCRjZRm3NQPcPMtA="
+        class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-lg transition-opacity duration-1000 ease-in-out opacity-100 z-10"
+      />
+      <img id="img2"
+        src=""
+        class="absolute inset-0 w-full h-full object-cover rounded-2xl shadow-lg transition-opacity duration-1000 ease-in-out opacity-0 z-0"
+      />
+    </div>
 
-        </div>
-    </section>
+  </div>
+</section>
+
+<script>
+  const images = [
+    "https://media.istockphoto.com/id/520703373/photo/man-looking-to-buy-jacket-and-outdoor-equipment.jpg?s=612x612&w=0&k=20&c=foS1JrzI9m0M03GjRWSmMU_PqKcPCRjZRm3NQPcPMtA=",
+    "https://imgstaticcontent.lbb.in/lbbnew/wp-content/uploads/sites/2/2016/06/SportShoppingCrownCricketerFeatured-i.jpg",
+    "https://st.depositphotos.com/1480128/2099/i/950/depositphotos_20997099-stock-photo-kids-playing-football.jpg"
+  ];
+
+  let current = 0;
+  const img1 = document.getElementById("img1");
+  const img2 = document.getElementById("img2");
+
+  setInterval(() => {
+    const next = (current + 1) % images.length;
+
+    if (img1.classList.contains("opacity-100")) {
+      img2.src = images[next];
+      img2.classList.add("opacity-100", "z-10");
+      img1.classList.remove("opacity-100");
+      img1.classList.add("opacity-0", "z-0");
+    } else {
+      img1.src = images[next];
+      img1.classList.add("opacity-100", "z-10");
+      img2.classList.remove("opacity-100");
+      img2.classList.add("opacity-0", "z-0");
+    }
+
+    current = next;
+  }, 2000);
+</script>
+
 
     <!-- stats -->
      <section class="py-2 bg-green-600">
@@ -121,7 +159,7 @@
 
         <!-- Category Tabs -->
         <div class="flex justify-center mb-8">
-            <div class="bg-gray-100 rounded-lg p-1 flex space-x-1">
+            <div class="bg-gray-100 rounded-lg flex space-x-1">
                 <button onclick="showCategory('cricket')" id="cricket-tab"
                     class="px-6 py-2 rounded-lg bg-green-600 text-white font-medium transition-colors">
                     🏏 Cricket
@@ -136,7 +174,7 @@
         <!-- Cricket Products -->
         <div id="cricket-products" class="transition-all duration-300">
             <!-- Carousel view (when more than 3 products) -->
-            <div id="cricket-carousel" class="hidden">
+            <div id="cricket-carousel" class="hidden px-4">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold text-gray-900">Cricket Products</h3>
                     <div class="flex space-x-2">
@@ -164,7 +202,7 @@
         <!-- Football Products -->
         <div id="football-products" class="hidden transition-all duration-300">
             <!-- Carousel view (when more than 3 products) -->
-            <div id="football-carousel" class="hidden">
+            <div id="football-carousel" class="hidden px-4">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-xl font-bold text-gray-900">Football Products</h3>
                     <div class="flex space-x-2">
