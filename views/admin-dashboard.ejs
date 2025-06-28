@@ -190,175 +190,16 @@
                 
                 <!-- Grid view (when 3 or fewer products) -->
                 <div id="cricket-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Cricket Bat -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://dpazadsports.com/wp-content/uploads/2025/02/Feature-img-Best-Bat-Company-Top-Cricket-Bat-Brands-in-India-Worldwide.jpg"
-                            alt="Professional Cricket Bat" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Professional Cricket Bat</h3>
-                            <p class="text-gray-600 mb-4">Premium willow cricket bat for professionals</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹2,499</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('cricket-bat')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('cricket-bat')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cricket Helmet -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://images.pexels.com/photos/13067380/pexels-photo-13067380.jpeg?cs=srgb&dl=pexels-usbofphotography-13067380.jpg&fm=jpg"
-                            class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Cricket Helmet</h3>
-                            <p class="text-gray-600 mb-4">Safety helmet with premium protection</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹1,299</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('cricket-helmet')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('cricket-helmet')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cricket Gloves -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://media.istockphoto.com/id/184141809/photo/blue-and-white-leather-batting-gloves-isolated-on-white.jpg?s=612x612&w=0&k=20&c=dsA4haeum94A2nJZ2-wzA47-HKwOcW_QiIowa4bMguU="
-                            alt="Cricket Gloves" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Cricket Batting Gloves</h3>
-                            <p class="text-gray-600 mb-4">Premium leather batting gloves</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹899</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('cricket-gloves')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('cricket-gloves')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Added Products Carousel (if any) -->
-            <div id="added-football-carousel" class="mb-8 hidden">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-xl font-bold text-gray-900">Recently Added Products</h3>
-                    <div class="flex space-x-2">
-                        <button onclick="scrollCarousel('added-football-products', -1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-                            ←
-                        </button>
-                        <button onclick="scrollCarousel('added-football-products', 1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-                            →
-                        </button>
-                    </div>
-                </div>
-                <div class="overflow-x-auto">
-                    <div id="added-football-products" class="flex space-x-6 pb-4" style="scroll-behavior: smooth;">
-                        <!-- Added football products will appear here -->
-                    </div>
+                    <!-- Products will be loaded dynamically from API -->
                 </div>
             </div>
 
             <!-- Football Products -->
             <div id="football-products" class="hidden transition-all duration-300">
-                <!-- Initial grid for up to 3 products -->
-                <div id="football-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Football Boots -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://cdn.lovellsports.com/features/splash-pages/soccer/boots/nike-mar25.jpg?width=540"
-                            alt="Football Boots" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Professional Football Boots</h3>
-                            <p class="text-gray-600 mb-4">High-performance boots for all surfaces</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹3,499</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('football-boots')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('football-boots')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Football -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT436RR-MYgQl9xVFBmGpFMxwG9Vekbi7ny7w&s"
-                            alt="Football" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Professional Football</h3>
-                            <p class="text-gray-600 mb-4">FIFA approved match football</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹1,999</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('football')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('football')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Football Jersey -->
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border">
-                        <img src="https://assets.ajio.com/medias/sys_master/root/20240823/Ywmx/66c8a6c71d763220fa94a480/-473Wx593H-469597566-white-MODEL.jpg"
-                            alt="Football Jersey" class="w-full h-48 object-cover rounded-t-lg">
-                        <div class="p-6">
-                            <h3 class="text-lg font-semibold mb-2">Football Training Jersey</h3>
-                            <p class="text-gray-600 mb-4">Breathable training jersey with moisture-wicking</p>
-                            <div class="flex justify-between items-center">
-                                <span class="text-2xl font-bold text-green-600">₹1,299</span>
-                                <div class="flex space-x-2">
-                                    <button onclick="editProduct('football-jersey')"
-                                        class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
-                                        Edit
-                                    </button>
-                                    <button onclick="deleteProduct('football-jersey')"
-                                        class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carousel for when there are more than 3 products -->
+                <!-- Carousel view (when more than 3 products) -->
                 <div id="football-carousel" class="hidden">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-gray-900">All Football Products</h3>
+                        <h3 class="text-xl font-bold text-gray-900">Football Products</h3>
                         <div class="flex space-x-2">
                             <button onclick="scrollCarousel('football-carousel-items', -1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
                                 ←
@@ -370,9 +211,14 @@
                     </div>
                     <div class="overflow-x-auto">
                         <div id="football-carousel-items" class="flex space-x-6 pb-4" style="scroll-behavior: smooth;">
-                            <!-- All football products will be moved here when carousel is activated -->
+                            <!-- Products will appear here when in carousel mode -->
                         </div>
                     </div>
+                </div>
+                
+                <!-- Grid view (when 3 or fewer products) -->
+                <div id="football-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Products will be loaded dynamically from API -->
                 </div>
             </div>
         </div>
@@ -615,17 +461,100 @@
     </div>
 
     <script>
-        // Store for dynamically added products
-        let addedProducts = {
+        // Store for all products
+        let allProducts = {
             cricket: [],
             football: []
         };
 
         // Track total products count for each category
         let totalProductsCount = {
-            cricket: 3, // existing products
-            football: 3  // existing products
+            cricket: 0,
+            football: 0
         };
+
+        // Load products from API
+        async function loadProducts() {
+            try {
+                const response = await fetch('/api/products');
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Organize products by category
+                    allProducts.cricket = data.products.filter(p => p.category === 'cricket');
+                    allProducts.football = data.products.filter(p => p.category === 'football');
+                    
+                    // Update product counts
+                    totalProductsCount.cricket = allProducts.cricket.length;
+                    totalProductsCount.football = allProducts.football.length;
+                    
+                    // Display current category
+                    const currentCategory = document.getElementById('cricket-products').classList.contains('hidden') ? 'football' : 'cricket';
+                    displayProducts(currentCategory);
+                } else {
+                    console.error('Failed to load products:', data.message);
+                }
+            } catch (error) {
+                console.error('Error loading products:', error);
+            }
+        }
+
+        // Display products for a category
+        function displayProducts(category) {
+            const products = allProducts[category];
+            
+            if (products.length === 0) {
+                showEmptyState(category);
+                return;
+            }
+
+            // Decide between grid and carousel view
+            if (products.length <= 3) {
+                showGridView(category, products);
+            } else {
+                showCarouselView(category, products);
+            }
+        }
+
+        function showEmptyState(category) {
+            const grid = document.getElementById(`${category}-grid`);
+            const carousel = document.getElementById(`${category}-carousel`);
+            
+            // Show grid, hide carousel
+            grid.classList.remove('hidden');
+            carousel.classList.add('hidden');
+            
+            grid.innerHTML = `
+                <div class="col-span-full text-center py-12 text-gray-500">
+                    <div class="text-6xl mb-4">📦</div>
+                    <p>No ${category} products available</p>
+                    <p class="text-sm">Add some products to get started!</p>
+                </div>
+            `;
+        }
+
+        function showGridView(category, products) {
+            const grid = document.getElementById(`${category}-grid`);
+            const carousel = document.getElementById(`${category}-carousel`);
+            
+            // Show grid, hide carousel
+            grid.classList.remove('hidden');
+            carousel.classList.add('hidden');
+            
+            grid.innerHTML = products.map(product => createProductCard(product, false)).join('');
+        }
+
+        function showCarouselView(category, products) {
+            const grid = document.getElementById(`${category}-grid`);
+            const carousel = document.getElementById(`${category}-carousel`);
+            const carouselItems = document.getElementById(`${category}-carousel-items`);
+            
+            // Show carousel, hide grid
+            carousel.classList.remove('hidden');
+            grid.classList.add('hidden');
+            
+            carouselItems.innerHTML = products.map(product => createProductCard(product, true)).join('');
+        }
 
         function showCategory(category) {
             // Update tab styling
@@ -645,6 +574,9 @@
                 document.getElementById('football-products').classList.remove('hidden');
                 document.getElementById('cricket-products').classList.add('hidden');
             }
+            
+            // Display products for the selected category
+            displayProducts(category);
         }
 
         function addProduct() {
@@ -670,52 +602,28 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Create product object for frontend display
-                    const newProduct = {
-                        id: data.product._id,
-                        name: data.product.name,
-                        price: data.product.price,
-                        description: data.product.description,
-                        category: data.product.category,
-                        image: data.product.image
-                    };
+                    // Reload products from API to get the updated list
+                    loadProducts().then(() => {
+                        // Switch to the category and show success
+                        showCategory(data.product.category);
+                        
+                        // Highlight animation for newly added product
+                        setTimeout(() => {
+                            const newCard = document.querySelector(`[data-product-id="${data.product._id}"]`);
+                            if (newCard) {
+                                newCard.style.transform = 'scale(1.02)';
+                                newCard.style.transition = 'transform 0.3s ease';
+                                setTimeout(() => {
+                                    newCard.style.transform = 'scale(1)';
+                                }, 300);
+                            }
+                        }, 100);
 
-                    // Add to our frontend store
-                    addedProducts[newProduct.category].push(newProduct);
-                    totalProductsCount[newProduct.category]++;
-
-                    // Handle display logic
-                    if (totalProductsCount[newProduct.category] <= 3) {
-                        const targetGrid = document.getElementById(`${newProduct.category}-grid`);
-                        const productCard = createProductCard(newProduct, false);
-                        targetGrid.insertBefore(productCard, targetGrid.firstChild);
-                    } else if (totalProductsCount[newProduct.category] === 4) {
-                        switchToCarouselMode(newProduct.category);
-                    } else {
-                        const carouselItems = document.getElementById(`${newProduct.category}-carousel-items`);
-                        const newCard = createProductCard(newProduct, true);
-                        carouselItems.insertBefore(newCard, carouselItems.firstChild);
-                    }
-                    
-                    // Switch to the category and show success
-                    showCategory(newProduct.category);
-                    
-                    // Highlight animation
-                    setTimeout(() => {
-                        const newCard = document.querySelector(`[data-product-id="${newProduct.id}"]`);
-                        if (newCard) {
-                            newCard.style.transform = 'scale(1.02)';
-                            newCard.style.transition = 'transform 0.3s ease';
-                            setTimeout(() => {
-                                newCard.style.transform = 'scale(1)';
-                            }, 300);
-                        }
-                    }, 100);
-
-                    // Show success modal and reset form
-                    document.getElementById('success-modal').classList.remove('hidden');
-                    document.getElementById('success-modal').classList.add('flex');
-                    form.reset();
+                        // Show success modal and reset form
+                        document.getElementById('success-modal').classList.remove('hidden');
+                        document.getElementById('success-modal').classList.add('flex');
+                        form.reset();
+                    });
                 } else {
                     showNotification('Error: ' + data.message, 'error');
                 }
@@ -727,49 +635,46 @@
         }
 
         function createProductCard(product, isCarousel = true) {
-            const card = document.createElement('div');
-            card.setAttribute('data-product-id', product.id);
+            // Check if product is newly added (within last 24 hours)
+            const isNew = product.createdAt && new Date(product.createdAt) > new Date(Date.now() - 24*60*60*1000);
             
-            if (isCarousel) {
-                card.className = 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border flex-shrink-0';
-                card.style.width = '280px'; // Fixed width for carousel
-            } else {
-                card.className = 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border';
-            }
+            const cardClass = isCarousel 
+                ? 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border flex-shrink-0' 
+                : 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border';
             
-            // Only show "NEW" tag for dynamically added products
-            const newTag = product.id && product.id.startsWith('added-') ? 
-                `<div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">
-                    NEW
-                </div>` : '';
+            const cardStyle = isCarousel ? 'style="width: 280px;"' : '';
             
-            card.innerHTML = `
-                <div class="relative">
-                    <img src="${product.image}" 
-                         alt="${product.name}" 
-                         class="w-full h-48 object-cover rounded-t-lg"
-                         onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                    ${newTag}
-                </div>
-                <div class="p-6">
-                    <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
-                    <p class="text-gray-600 mb-4 text-sm">${product.description}</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-xl font-bold text-green-600">₹${product.price}</span>
-                        <div class="flex space-x-1">
-                            <button onclick="editProduct('${product.id}')"
-                                class="px-2 py-1 bg-blue-600 text-white rounded text-xs hover:bg-blue-700 transition-colors">
-                                Edit
-                            </button>
-                            <button onclick="deleteProduct('${product.id}')"
-                                class="px-2 py-1 bg-red-600 text-white rounded text-xs hover:bg-red-700 transition-colors">
-                                Delete
-                            </button>
+            const newTag = isNew ? 
+                `<div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">NEW</div>` : '';
+
+            return `
+                <div class="${cardClass}" data-product-id="${product._id}" ${cardStyle}>
+                    <div class="relative">
+                        <img src="${product.image}" 
+                             alt="${product.name}" 
+                             class="w-full h-48 object-cover rounded-t-lg"
+                             onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
+                        ${newTag}
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
+                        <p class="text-gray-600 mb-4">${product.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-green-600">₹${product.price}</span>
+                            <div class="flex space-x-2">
+                                <button onclick="editProduct('${product._id}')"
+                                    class="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm">
+                                    Edit
+                                </button>
+                                <button onclick="deleteProduct('${product._id}')"
+                                    class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm">
+                                    Delete
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             `;
-            return card;
         }
 
         function switchToCarouselMode(category) {
@@ -831,41 +736,32 @@
 
         function deleteProduct(productId) {
             if (confirm('Are you sure you want to delete this product?')) {
-                // Check if it's a dynamically added product (has real backend ID)
-                if (productId.startsWith('added-') || productId.length === 24) { // MongoDB ObjectId is 24 chars
-                    // Call backend API to delete
-                    fetch(`/api/admin/products/${productId}`, {
-                        method: 'DELETE',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            // Remove from frontend store
-                            for (let category in addedProducts) {
-                                addedProducts[category] = addedProducts[category].filter(p => p.id !== productId);
-                            }
-                            
-                            // Remove from DOM
-                            const productElements = document.querySelectorAll(`[data-product-id="${productId}"]`);
-                            productElements.forEach(el => {
-                                el.remove();
-                            });
-                            
-                            showNotification('Product deleted successfully and removed from user dashboard!');
-                        } else {
-                            showNotification('Error: ' + data.message, 'error');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error deleting product:', error);
-                        showNotification('Error deleting product. Please try again.', 'error');
-                    });
-                } else {
-                    showNotification('Cannot delete pre-existing products in this demo!', 'warning');
-                }
+                // Call backend API to delete
+                fetch(`/api/admin/products/${productId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Reload products from API to get the updated list
+                        loadProducts().then(() => {
+                            // Show the current category after reload
+                            const currentCategory = document.getElementById('cricket-products').classList.contains('hidden') ? 'football' : 'cricket';
+                            showCategory(currentCategory);
+                        });
+                        
+                        showNotification('Product deleted successfully and removed from user dashboard!');
+                    } else {
+                        showNotification('Error: ' + data.message, 'error');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error deleting product:', error);
+                    showNotification('Error deleting product. Please try again.', 'error');
+                });
             }
         }
 
@@ -906,7 +802,8 @@
         });
 
         // Initialize page
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', async function () {
+            await loadProducts(); // Load products from API
             showCategory('cricket'); // Show cricket products by default
         });
     </script>

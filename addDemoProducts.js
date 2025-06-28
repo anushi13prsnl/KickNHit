@@ -70,10 +70,13 @@ async function addDemoProducts() {
         await Product.deleteMany({});
         console.log('Cleared existing products');
 
-        // Add demo products
+        // Add demo products with older timestamps to simulate existing inventory
+        const oneWeekAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
         const productsWithAdmin = demoProducts.map(product => ({
             ...product,
-            createdBy: admin._id
+            createdBy: admin._id,
+            createdAt: oneWeekAgo,
+            updatedAt: oneWeekAgo
         }));
 
         await Product.insertMany(productsWithAdmin);

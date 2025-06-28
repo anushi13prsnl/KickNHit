@@ -134,13 +134,59 @@
         </div>
 
         <!-- Cricket Products -->
-        <div id="cricket-products" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Products will be loaded dynamically from API -->
+        <div id="cricket-products" class="transition-all duration-300">
+            <!-- Carousel view (when more than 3 products) -->
+            <div id="cricket-carousel" class="hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">Cricket Products</h3>
+                    <div class="flex space-x-2">
+                        <button onclick="scrollCarousel('cricket-carousel-items', -1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            ←
+                        </button>
+                        <button onclick="scrollCarousel('cricket-carousel-items', 1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            →
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <div id="cricket-carousel-items" class="flex space-x-6 pb-4" style="scroll-behavior: smooth;">
+                        <!-- Products will appear here when in carousel mode -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid view (when 3 or fewer products) -->
+            <div id="cricket-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Products will be loaded dynamically from API -->
+            </div>
         </div>
 
         <!-- Football Products -->
-        <div id="football-products" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Products will be loaded dynamically from API -->
+        <div id="football-products" class="hidden transition-all duration-300">
+            <!-- Carousel view (when more than 3 products) -->
+            <div id="football-carousel" class="hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold text-gray-900">Football Products</h3>
+                    <div class="flex space-x-2">
+                        <button onclick="scrollCarousel('football-carousel-items', -1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            ←
+                        </button>
+                        <button onclick="scrollCarousel('football-carousel-items', 1)" class="p-2 bg-gray-200 rounded-full hover:bg-gray-300">
+                            →
+                        </button>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <div id="football-carousel-items" class="flex space-x-6 pb-4" style="scroll-behavior: smooth;">
+                        <!-- Products will appear here when in carousel mode -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grid view (when 3 or fewer products) -->
+            <div id="football-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Products will be loaded dynamically from API -->
+            </div>
         </div>
         </div>
     </section>
@@ -424,10 +470,10 @@
 
         // Display products for a category
         function displayProducts(category) {
-            const container = document.getElementById(`${category}-products`);
             const products = allProducts[category];
             
             if (products.length === 0) {
+                const container = document.getElementById(`${category}-grid`);
                 container.innerHTML = `
                     <div class="col-span-full text-center py-12 text-gray-500">
                         <div class="text-6xl mb-4">📦</div>
@@ -438,15 +484,58 @@
                 return;
             }
 
-            container.innerHTML = products.map(product => `
-                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border" data-product-id="${product._id}">
+            // Decide between grid and carousel view
+            if (products.length <= 3) {
+                showGridView(category, products);
+            } else {
+                showCarouselView(category, products);
+            }
+        }
+
+        function showGridView(category, products) {
+            const grid = document.getElementById(`${category}-grid`);
+            const carousel = document.getElementById(`${category}-carousel`);
+            
+            // Show grid, hide carousel
+            grid.classList.remove('hidden');
+            carousel.classList.add('hidden');
+            
+            grid.innerHTML = products.map(product => createProductCardHTML(product, false)).join('');
+        }
+
+        function showCarouselView(category, products) {
+            const grid = document.getElementById(`${category}-grid`);
+            const carousel = document.getElementById(`${category}-carousel`);
+            const carouselItems = document.getElementById(`${category}-carousel-items`);
+            
+            // Show carousel, hide grid
+            carousel.classList.remove('hidden');
+            grid.classList.add('hidden');
+            
+            carouselItems.innerHTML = products.map(product => createProductCardHTML(product, true)).join('');
+        }
+
+        function createProductCardHTML(product, isCarousel = false) {
+            // Check if product is newly added (within last 24 hours)
+            const isNew = product.createdAt && new Date(product.createdAt) > new Date(Date.now() - 24*60*60*1000);
+            
+            const cardClass = isCarousel 
+                ? 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border flex-shrink-0' 
+                : 'bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow border';
+            
+            const cardStyle = isCarousel ? 'style="width: 280px;"' : '';
+            
+            const newTag = isNew ? 
+                `<div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">NEW</div>` : '';
+
+            return `
+                <div class="${cardClass}" data-product-id="${product._id}" ${cardStyle}>
                     <div class="relative">
                         <img src="${product.image}" 
                              alt="${product.name}" 
                              class="w-full h-48 object-cover rounded-t-lg"
                              onerror="this.src='https://via.placeholder.com/300x200?text=Image+Not+Found'">
-                        ${product.createdAt && new Date(product.createdAt) > new Date(Date.now() - 7*24*60*60*1000) ? 
-                            `<div class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-bold">NEW</div>` : ''}
+                        ${newTag}
                     </div>
                     <div class="p-6">
                         <h3 class="text-lg font-semibold mb-2">${product.name}</h3>
@@ -462,7 +551,17 @@
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `;
+        }
+
+        function scrollCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const cardWidth = 280 + 24; // card width + gap
+            const scrollAmount = cardWidth * direction;
+            carousel.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
         }
 
         function showCategory(category) {
@@ -478,14 +577,10 @@
             // Show/hide product sections
             if (category === 'cricket') {
                 document.getElementById('cricket-products').classList.remove('hidden');
-                document.getElementById('cricket-products').classList.add('grid');
                 document.getElementById('football-products').classList.add('hidden');
-                document.getElementById('football-products').classList.remove('grid');
             } else {
                 document.getElementById('football-products').classList.remove('hidden');
-                document.getElementById('football-products').classList.add('grid');
                 document.getElementById('cricket-products').classList.add('hidden');
-                document.getElementById('cricket-products').classList.remove('grid');
             }
             
             // Display products for the selected category
@@ -498,8 +593,6 @@
                 await loadProducts();
             }, 30000); // Refresh every 30 seconds
         }
-
-
 
         function addToCart(id, name, price) {
             const existingItem = cart.find(item => item.id === id);
