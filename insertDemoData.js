@@ -8,7 +8,7 @@ const User = require('./models/User');
 // Adims -
 const adminData = [
   {
-    firstName: "Admin",
+    firstName: "Admin I",
     lastName: "One",
     email: "admin1@kicknhit.com",
     password: "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
@@ -16,7 +16,7 @@ const adminData = [
     createdAt: new Date("2024-01-15T10:30:00.000Z")
   },
   {
-    firstName: "Admin",
+    firstName: "Admin II",
     lastName: "Two",
     email: "admin2@kicknhit.com",
     password: "$2b$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
