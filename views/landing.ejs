@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KickNHit - Premium Sports Equipment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'green-600': '#059669',
+                        'green-700': '#047857'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-white">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-green-600">KickNHit</h1>
+                    </div>
+                </div>
+
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-900 hover:text-green-600 px-3 py-2 text-sm font-medium">Home</a>
+                        <a href="#products" class="text-gray-500 hover:text-green-600 px-3 py-2 text-sm font-medium">Products</a>
+                        <a href="#about" class="text-gray-500 hover:text-green-600 px-3 py-2 text-sm font-medium">About</a>
+                        <a href="#contact" class="text-gray-500 hover:text-green-600 px-3 py-2 text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="/user/login" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                        Login
+                    </a>
+                    <a href="/user/signup" class="px-4 py-2 bg-green-600 text-white rounded-md text-sm font-medium hover:bg-green-700 transition-colors">
+                        Sign Up
+                    </a>
+                    <a href="/admin/login" class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors">
+                        Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-br from-green-50 to-blue-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block mb-4 px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                        Premium Sports Equipment
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                        Gear Up for
+                        <span class="text-green-600"> Victory</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Discover premium cricket and football equipment trusted by professionals. From bats to boots, we've got everything you need to dominate the field.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#products" class="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                            🛒 Shop Now
+                        </a>
+                        <a href="#products" class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors">
+                            View Catalog
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-8 mt-8">
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-600">🚚</span>
+                            <span class="text-sm text-gray-600">Free Shipping</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-600">🛡️</span>
+                            <span class="text-sm text-gray-600">2 Year Warranty</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-green-600">🏆</span>
+                            <span class="text-sm text-gray-600">Certified Quality</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-green-100 to-green-200 h-72 rounded-lg flex flex-col items-center justify-center shadow-lg">
+                            <img src="https://media.istockphoto.com/id/642535368/photo/the-tools-for-a-cricket.jpg?s=612x612&w=0&k=20&c=cCpgXzyjgoVqS1A8ah4dA5r0XU0xCENBv8YtNFZMFyA=" alt="Cricket Equipment" class="w-full h-40 object-cover rounded-t-lg mb-4">
+                            <span class="text-gray-700 font-medium">🏏 Cricket Equipment</span>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-100 to-blue-200 h-72 rounded-lg flex flex-col items-center justify-center mt-8 shadow-lg">
+                            <img src="https://cdn.pixabay.com/photo/2021/10/03/22/31/soccer-6679089_640.jpg" alt="Football Equipment" class="w-full h-40 object-cover rounded-t-lg mb-4">
+                            <span class="text-gray-700 font-medium">⚽ Football Equipment</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-white p-4 rounded-lg shadow-lg">
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-yellow-400">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                            <span class="text-sm font-medium">4.9/5 Rating</span>
+                        </div>
+                        <p class="text-xs text-gray-600 mt-1">From 2,500+ customers</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Product Categories</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Professional-grade equipment for cricket and football enthusiasts at every level
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Cricket Bats -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+                    <div class="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src="https://media.istockphoto.com/id/642535426/photo/the-tools-for-a-cricket.jpg?s=612x612&w=0&k=20&c=AgM06OJNE-GH2AAAnyCP6xCyRXLVxXqS-53LXO2_lus=" alt="Cricket Bats" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Cricket Bats</h3>
+                        <p class="text-gray-600 mb-4">Professional cricket bats from top brands</p>
+                        <button class="w-full py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-green-600 hover:text-white transition-colors">
+                            View Collection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cricket Gear -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+                    <div class="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src="https://cdnmedia.dsc-cricket.com/media/catalog/product/cache/5b0ea239e50527b43e3253a7f103e237/d/s/dsc-2020-cricket-kit_2.webp" alt="Cricket Gear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Cricket Gear</h3>
+                        <p class="text-gray-600 mb-4">Pads, gloves, helmets and protective gear</p>
+                        <button class="w-full py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-green-600 hover:text-white transition-colors">
+                            View Collection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Football Boots -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+                    <div class="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src="https://cdn.pixabay.com/photo/2022/05/08/18/38/football-7182747_1280.jpg" alt="Football Boots" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Football Boots</h3>
+                        <p class="text-gray-600 mb-4">Premium football boots for all surfaces</p>
+                        <button class="w-full py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-green-600 hover:text-white transition-colors">
+                            View Collection
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Football Gear -->
+                <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow group">
+                    <div class="h-48 bg-gray-200 rounded-t-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=400&h=300&fit=crop&crop=center" alt="Football Gear" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold mb-2">Football Gear</h3>
+                        <p class="text-gray-600 mb-4">Jerseys, shin guards and training equipment</p>
+                        <button class="w-full py-2 px-4 border border-gray-300 rounded-md text-gray-700 hover:bg-green-600 hover:text-white transition-colors">
+                            View Collection
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About KickNHit</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Your trusted partner in sports excellence since 2015. We believe every athlete deserves the best equipment to achieve their dreams.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Our Story</h3>
+                    <p class="text-gray-600 mb-4">
+                        Founded by former professional athletes, KickNHit emerged from a simple mission: to provide world-class sports equipment that empowers players at every level. From grassroots cricket clubs to premier football academies, we've been supporting athletic dreams for over 8 years.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our journey started in a small warehouse with just cricket bats and footballs. Today, we're proud to offer a comprehensive range of premium sports equipment trusted by professionals and amateurs alike.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600 mb-2">10,000+</div>
+                            <div class="text-gray-600">Happy Athletes</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-600 mb-2">500+</div>
+                            <div class="text-gray-600">Products</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <img src="https://media.istockphoto.com/id/1158435298/photo/grand-cricket-stadium-with-wooden-wickets-front-view-in-daylight.jpg?s=612x612&w=0&k=20&c=BNIDRFcvq_1qbxOVcrbzaiScPyApWb7FU448lVZtMjA=" alt="Cricket Bats Collection" class="rounded-lg shadow-md w-full h-48 object-cover">
+                        <img src="https://cdn.pixabay.com/photo/2015/04/15/21/06/cricket-724614_640.jpg" alt="Cricket Equipment" class="rounded-lg shadow-md w-full h-36 object-cover">
+                    </div>
+                    <div class="space-y-4 mt-8">
+                        <img src="https://cdn.pixabay.com/photo/2014/10/14/20/24/soccer-488700_640.jpg" alt="Cricket Protective Gear" class="rounded-lg shadow-md w-full h-36 object-cover">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_640.jpg" alt="Football Training" class="rounded-lg shadow-md w-full h-48 object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission & Values -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Our Mission</h4>
+                    <p class="text-gray-600">
+                        To democratize access to professional-grade sports equipment, making excellence achievable for every athlete regardless of their level or background.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Quality Promise</h4>
+                    <p class="text-gray-600">
+                        Every product undergoes rigorous testing by professional athletes. We partner only with manufacturers who share our commitment to excellence and durability.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🤝</span>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3">Community First</h4>
+                    <p class="text-gray-600">
+                        We believe in giving back. 5% of our profits support local sports clubs and provide equipment to underprivileged young athletes in our community.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-8 bg-green-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">10K+</div>
+                    <div class="text-green-100">Happy Customers</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+                    <div class="text-green-100">Products</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
+                    <div class="text-green-100">Brands</div>
+                </div>
+                <div>
+                    <div class="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-green-100">Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Contact Information -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-green-400 mb-4">Get In Touch</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-8">
+                    Have questions about our products or need personalized recommendations? Our expert team is here to help you find the perfect equipment for your game.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Contact Info -->
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">📍</span>
+                    </div>
+                    <h4 class="font-semibold mb-2">Visit Our Store</h4>
+                    <p class="text-gray-300 text-sm">
+                        123 Sports Avenue<br>
+                        Mumbai, Maharashtra 400001<br>
+                        India
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">📞</span>
+                    </div>
+                    <h4 class="font-semibold mb-2">Call Us</h4>
+                    <p class="text-gray-300 text-sm">
+                        +91 98765 43210<br>
+                        +91 87654 32109<br>
+                        Mon-Sat 9AM-8PM
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">📧</span>
+                    </div>
+                    <h4 class="font-semibold mb-2">Email Us</h4>
+                    <p class="text-gray-300 text-sm">
+                        info@kicknhit.com<br>
+                        support@kicknhit.com<br>
+                        We reply within 2 hours
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-xl">💬</span>
+                    </div>
+                    <h4 class="font-semibold mb-2">Live Chat</h4>
+                    <p class="text-gray-300 text-sm">
+                        Chat with our experts<br>
+                        Available 24/7<br>
+                        Instant assistance
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="border-t border-gray-800 mt-12 pt-8 -mb-10 text-center">
+                <p class="text-gray-400">© 2025 KickNHit. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
