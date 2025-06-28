@@ -9,6 +9,7 @@ const app = express();
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI, {
@@ -44,6 +45,7 @@ app.use(session({
 
 // Routes
 app.use('/', authRoutes);
+app.use('/api', apiRoutes);
 
 // 404 handler
 app.use((req, res) => {
