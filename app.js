@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 .catch(err => console.error('Database connection error:', err));
 
 // View engine setup
-app.set('view engine', 'ejs');
+app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Middleware
